@@ -48,7 +48,7 @@ rpc.register({
     address: { type: "string", required: false },
   },
   implementation: async ({ name, email, password, phone, address }) => {
-    const res = await fetch("https://shopping-dashboard-backend.onrender.com", {
+    const res = await fetch("https://shopping-dashboard-backend.onrender.com/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
