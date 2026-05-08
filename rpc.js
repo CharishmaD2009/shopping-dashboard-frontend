@@ -23,7 +23,6 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`RPC Express server running on port ${PORT}`);
 });
-import { RetoolRPC } from "retoolrpc";
 
 // Initialize RPC
 const rpc = new RetoolRPC({
