@@ -24,7 +24,7 @@ rpc.register({
     address: { type: "string", required: false },
   },
   implementation: async ({ name, email, password, phone, address }) => {
-    const res = await fetch("http://127.0.0.1:5000/api/auth/register", {
+    const res = await fetch("https://shopping-dashboard-backend.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ rpc.register({
     password: { type: "string", required: true },
   },
   implementation: async ({ email, password }) => {
-    const res = await fetch("http://127.0.0.1:5000/api/auth/login", {
+    const res = await fetch("https://shopping-dashboard-backend.onrender.com/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +67,7 @@ rpc.register({
     token: { type: "string", required: true },
   },
   implementation: async ({ token }) => {
-    const res = await fetch("http://127.0.0.1:5000/api/profile", {
+    const res = await fetch("https://shopping-dashboard-backend.onrender.com/api/profile", {
       headers: {
         Authorization: token,
       },
@@ -86,7 +86,7 @@ rpc.register({
     token: { type: "string", required: true },
   },
   implementation: async ({ token }) => {
-    const res = await fetch("http://127.0.0.1:5000/api/products", {
+    const res = await fetch("https://shopping-dashboard-backend.onrender.com/api/products", {
       headers: {
         Authorization: token,
       },
@@ -105,7 +105,7 @@ rpc.register({
     token: { type: "string", required: true },
   },
   implementation: async ({ token }) => {
-    const res = await fetch("http://127.0.0.1:5000/api/orders-full", {
+    const res = await fetch("https://shopping-dashboard-backend.onrender.com/api/orders-full", {
       headers: {
         Authorization: token,
       },
@@ -122,7 +122,7 @@ rpc.register({
     token: { type: "string", required: true },
   },
   implementation: async ({ token }) => {
-    const res = await fetch("http://127.0.0.1:5000/api/orders-full", {
+    const res = await fetch("https://shopping-dashboard-backend.onrender.com/api/orders-full", {
       method: "GET",
       headers: {
         Authorization: token,
@@ -143,7 +143,7 @@ rpc.register({
     quantity: { type: "number" }
   },
   implementation: async (args) => {
-    const res = await fetch("http://127.0.0.1:5000/api/cart/add", {
+    const res = await fetch("https://shopping-dashboard-backend.onrender.com/api/cart/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -160,7 +160,7 @@ rpc.register({
   name: "getCart",
   arguments: { token: { type: "string" } },
   implementation: async ({ token }) => {
-    const res = await fetch("http://127.0.0.1:5000/api/cart", {
+    const res = await fetch("https://shopping-dashboard-backend.onrender.com/api/cart", {
       headers: { Authorization: token }
     });
     return await res.json();
@@ -175,7 +175,7 @@ rpc.register({
     cart_id: { type: "number" }
   },
   implementation: async ({ token, cart_id }) => {
-    const res = await fetch("http://127.0.0.1:5000/api/cart/remove", {
+    const res = await fetch("https://shopping-dashboard-backend.onrender.com/api/cart/remove", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
