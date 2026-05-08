@@ -1,0 +1,16 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Retool RPC frontend for shopping dashboard",
+  "main": "rpc.js",
+  "type": "module",
+  "scripts": {
+    "start": "node rpc.js"
+  },
+  "dependencies": {
+    "retoolrpc": "^0.1.8"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
