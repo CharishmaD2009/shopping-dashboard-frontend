@@ -1,3 +1,28 @@
+import express from "express";
+import cors from "cors";
+import { RetoolRPC } from "retoolrpc";
+
+// Create Express App
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Test Route
+app.get("/", (req, res) => {
+  res.json({
+    status: "success",
+    message: "RPC Server Running"
+  });
+});
+
+// Expose Port
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`RPC Express server running on port ${PORT}`);
+});
 import { RetoolRPC } from "retoolrpc";
 
 // Initialize RPC
