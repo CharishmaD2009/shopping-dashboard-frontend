@@ -19,7 +19,6 @@ app.get("/", (req, res) => {
 
 // Expose Port
 const PORT = process.env.PORT || 3000;
-rpc.listen();
 
 app.listen(PORT, () => {
   console.log(`RPC Express server running on port ${PORT}`);
